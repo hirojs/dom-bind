@@ -82,8 +82,31 @@ function delegate_c(el, evtType, selector, cb, useCapture) {
 	}
 }
 
+function once(el, evtType, fn, useCapture) {
+	var called = false;
+	return bind(el, evtType, function _handler(evt) {
+		if (!called) {
+			called = true;
+			unbind(el, evtType, _handler, useCapture);
+			fn(evt);
+		}
+	}, useCapture);
+}
+
+function once_c(el, evtType, fn, useCapture) {
+	var handler = once(el, evtType, fn, useCapture);
+	var cancelled = false;
+	return function() {
+		if (cancelled) return;
+		cancelled = true;
+		unbind(el, evtType, handler, useCapture);
+	}
+}
+
 exports.bind = bind;
 exports.unbind = unbind;
 exports.delegate = delegate;
 exports.bind_c = bind_c;
 exports.delegate_c = delegate_c;
+exports.once = once;
+exports.once_c = once_c;

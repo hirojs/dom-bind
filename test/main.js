@@ -156,3 +156,41 @@ test("delegate_c() - unbind", function(assert) {
     assert.end();
 
 });
+
+test("once()", function(assert) {
+
+    var el = document.querySelector('#once');
+
+    var x = 0;
+
+    du.once(el, 'click', function(evt) {
+        x += 1;
+    });
+
+    click(el);
+    click(el);
+    click(el);
+
+    assert.ok(x === 1, "x should === 1");
+    assert.end();
+
+});
+
+test("once_c()", function(assert) {
+
+    var el = document.querySelector('#once_c');
+
+    var x = 0;
+
+    du.once(el, 'click', function(evt) {
+        x += 1;
+    });
+
+    click(el);
+    click(el);
+    click(el);
+
+    assert.ok(x === 1, "x should === 1");
+    assert.end();
+
+});
