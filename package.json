@@ -1,7 +1,7 @@
 {
-  "name": "dom-bind",
+  "name": "@hirojs/dom-bind",
   "main": "index.js",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "DOM event binding and delegation",
   "scripts": {
     "watch-demo-js": "watchify test/main.js -o test/bundle.js"
@@ -18,10 +18,7 @@
     "url": "https://github.com/jaz303/dom-bind.git"
   },
   "devDependencies": {
-    "uglify-js": "~2.4.14",
-    "tape": "~2.13.3"
-  },
-  "dependencies": {
-    "dom-matchesselector": "^1.0.0"
+    "tape": "^5.3.1",
+    "uglify-js": "^3.14.2"
   }
 }
