@@ -10,7 +10,7 @@ Browserify recommended.
 
 In the codes:
 
-	var E = require('dom-bind');
+	var E = require('@hirojs/dom-bind');
 
 ## API
 
