@@ -6,7 +6,7 @@ DOM event binding and delegation.
 
 Browserify recommended.
 
-	$ npm install dom-bind
+	$ npm install @hirojs/dom-bind
 
 In the codes:
 
